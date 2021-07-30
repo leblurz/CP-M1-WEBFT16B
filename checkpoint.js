@@ -137,7 +137,42 @@ LinkedList.prototype.size = function(){
 LinkedList.prototype.switchPos = function(pos1, pos2){
   // Tu código aca:
 
+  var current = this.head;
+  var current2 = this.head;
+  var count = 0;
+  var point1;
+
+  if (pos1 > this.size() || pos1 < 0 || pos2 > this.size() || pos2 < 0 ){
+    return false;
+  }
+
+  while (count < pos1){
+    current = current.next;
+    count += 1;
+  }
+
+  point1 = current
+  aux1 = current.value;
+  
+  while (count < pos2){
+    current = current.next;
+    count += 1;
+  }
+
+  point1.value = current.value
+  current.value = aux1;
+  return true;
 }
+
+//                   1                                   3
+
+  //  H        1             2             3             4                5 
+
+  //                                       3
+
+  //           P1 
+
+  //               AX1 = 2
 
 // EJERCICIO 5
 // Implementar la función mergeLinkedLists que, a partir de dos listas simplemente enlazadas 
@@ -152,7 +187,7 @@ LinkedList.prototype.switchPos = function(pos1, pos2){
 // Continuando con el nodo 2 de la lista 2, conectandose con el nodo 2 de la lista 2.
 var mergeLinkedLists = function(linkedListOne, linkedListTwo){
   // Tu código aca:
-
+  
 }
 
 
@@ -225,7 +260,27 @@ var cardGame = function(playerOneCards, playerTwoCards){
 BinarySearchTree.prototype.height = function(){
   // Tu código aca:
 
-}
+  if (!this.value) {
+    return 0;
+  }
+
+  else if (!this.left && !this.right) {
+    return 1;
+  }
+
+  else if (!this.left && this.right) {
+    return 1 + this.right.height();
+  }
+
+  else if (!this.right && this.left) {
+    return 1 + this.left.height();
+  }
+
+  var left = this.left.height()
+  var right = this.right.height()
+
+  return 1 + Math.max(left, right)
+} 
 
 
 // ---------------
@@ -274,7 +329,7 @@ var binarySearch = function (array, target) {
 
 var specialSort = function(array, orderFunction) {
   // Tu código aca:
-
+  
 }
 
 // ----- Closures -----
