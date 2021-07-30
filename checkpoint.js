@@ -280,6 +280,22 @@ var cardGame = function(playerOneCards, playerTwoCards){
   var castillo1 = 100;
   var castillo2 = 100;
 
+  var Carta = function (attack, defense){
+    this.attack = attack;
+    this.defense = defense;
+  }
+
+  if (playerOneCards.size <= 0 && playerTwoCards.size <= 0 || castillo1 === 0 && castillo2 === 0){
+    return 'TIE'
+  }
+
+  if (playerOneCards.size <= 0 || castillo1 === 0){
+    return 'PLAYER TWO' 
+  }
+
+  if (playerTwoCards.size <= 0 || castillo2 === 0){
+    return 'PLAYER ONE' 
+  }
 
 }
 
