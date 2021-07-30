@@ -317,16 +317,42 @@ BinarySearchTree.prototype.height = function(){
 //    binarySearch(array, 2) --> Devolvería 1 ya que array[1] = 2
 //    [Donde 2 sería el número sobre el cuál queremos saber su posición en el array]
 
+//                     
+//                               
+//                   
+//          [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+//                                      
+//                        
+//                           
+//
+//                              
+//                             
+//
+//
+//
+//
+//
 
 var binarySearch = function (array, target) {
   // Tu código aca:
-  // var boolean = false;
-  // for (let i = 0; i < array.length; i++) {
-    
-    
-    
-  // }
+
+    var puntoMedio = Math.floor ((array.length -1) / 2)
+  
+    if (array [puntoMedio] === target) {
+      return puntoMedio;
+    }
+  
+    if (array [puntoMedio] < target && array.length > 2) {
+      return binarySearch (array.slice (puntoMedio), target);
+    }
+  
+    if (array[puntoMedio] > target && array.length > 1) {
+      return binarySearch(array.slice(0, puntoMedio), target);
+    }
+  
+    return -1
 }
+
 
 // EJERCICIO 9
 // Ordená un arreglo de objetos usando un bubble sort pero con algunas particularidades.
