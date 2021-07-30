@@ -399,6 +399,7 @@ function closureDetect(symptoms, min) {
         return false;
       }
     
+  }
 }
 // -------------------
 
