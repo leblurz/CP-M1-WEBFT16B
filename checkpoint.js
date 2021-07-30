@@ -382,9 +382,24 @@ var specialSort = function(array, orderFunction) {
 
 function closureDetect(symptoms, min) {
   // Tu código aca:
-
+  var sintoma;
+  
+  return function (person) {
+    var count = 0;
+    for (let i = 0; i < symptoms.length; i++) {
+      if (symptoms.includes (person.symptoms [i])){
+        // console.log(person.symptoms[el])
+        count++;
+      }
+    }
+      if (count >= min){
+        return true;
+      }  
+      else {
+        return false;
+      }
+    
 }
-
 // -------------------
 
 module.exports = {
