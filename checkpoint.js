@@ -217,7 +217,19 @@ LinkedList.prototype.switchPos = function(pos1, pos2){
 // Continuando con el nodo 2 de la lista 2, conectandose con el nodo 2 de la lista 2.
 var mergeLinkedLists = function(linkedListOne, linkedListTwo){
   // Tu código aca:
-  
+
+  var list = new LinkedList;  
+  var current1 = linkedListOne.head;
+  var current2 = linkedListTwo.head;
+  // console.log(current1)
+
+  while(current1){
+    list.add(current1.value);
+    list.add(current2.value);
+    current1 = current1.next;
+    current2 = current2.next;
+  }
+  return list;
 }
 
 
