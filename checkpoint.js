@@ -98,7 +98,24 @@ function secuenciaHenry(obj, n) {
 
 LinkedList.prototype.size = function(){
   // Tu código aca:
+  var current = this.head;
+  // Contador del size
+  var count = 1;
 
+  // Linked vacia
+  if (!current){
+    return 0;
+  }
+
+  // De lo contrario
+  else{
+    while (current.next){
+      current = current.next;
+      count++;
+    }
+  }
+
+  return count;
 }
 
 
