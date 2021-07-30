@@ -40,6 +40,20 @@ const {
 var isAncestor = function(genealogyTree, ancestor, descendant){
   // Tu código aca:
   
+  if (genealogyTree[ancestor].length <= 0) {
+    return false
+  }
+  
+  for (let i = 0; i < genealogyTree[ancestor].length; i++) {
+    var newAncestor = genealogyTree[ancestor][i];
+    if (newAncestor === descendant){
+      return true;
+    }
+    if (genealogyTree[newAncestor].length > 0){
+      return isAncestor(genealogyTree, newAncestor, descendant);
+    }
+  }
+  return false;
 }
 
 
