@@ -39,7 +39,7 @@ const {
 
 var isAncestor = function(genealogyTree, ancestor, descendant){
   // Tu código aca:
-
+  
 }
 
 
@@ -301,7 +301,12 @@ BinarySearchTree.prototype.height = function(){
 
 var binarySearch = function (array, target) {
   // Tu código aca:
-
+  // var boolean = false;
+  // for (let i = 0; i < array.length; i++) {
+    
+    
+    
+  // }
 }
 
 // EJERCICIO 9
@@ -329,7 +334,22 @@ var binarySearch = function (array, target) {
 
 var specialSort = function(array, orderFunction) {
   // Tu código aca:
-  
+  var result = true;
+  var aux;
+  while (result){
+    result = false;
+    for (let i = 0; i < array.length-1; i++){
+      // console.log(array[i].age)
+      if (orderFunction(array[i], array[i + 1]) === -1){
+        // console.log(array[i])
+        aux = array[i];
+        array[i] = array[i + 1];
+        array[i + 1] = aux;
+        result = true;
+      }
+    }
+  }
+  return array;
 }
 
 // ----- Closures -----
